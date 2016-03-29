@@ -16,73 +16,107 @@ public abstract class Alumno implements Calificacion {
 	protected Asignatura asignaturas[];
 	
 	//constructores
-	public Alumno(String nombre, String apellidos){
+	public Alumno(String nombre, String apellidos) {
+		
 		this.nombre=nombre;
 		this.apellidos=apellidos;
 		dni=domicilio=fecha_nacimiento="";
 	}
 	
 	//métodos set/get
-	protected void setNombre(String nombre){
+	protected void setNombre(String nombre) {
+		
 		this.nombre=nombre;
 	}
-	protected String getNombre(){
+	
+	protected String getNombre() {
+		
 		return nombre;
 	}
-	protected void setApellidos(String apellidos){
+	
+	protected void setApellidos(String apellidos) {
+		
 		this.apellidos=apellidos;
 	}
-	protected String getApellidos(){
+	
+	protected String getApellidos() {
+		
 		return apellidos;
 	}
+	
 	protected String getDni(){
+		
 		return dni;
 	}
-	//Debe ser void
-	protected void setDni(int numero){
+	
+	//Debe ser void para poderle añadir el valor de nif en la variable dni
+	protected void setDni(int numero) {
+	
 		String nif;
 		nif=Extras.nif(numero);
-		this.dni =nif;//dejaba vacia la variable dni
+		this.dni =nif;
 	}
-	protected String getDomicilio(){
+	
+	protected String getDomicilio() {
+		
 		return domicilio;
 	}
-	protected char setFechaNacimiento(String fecha){
+	
+	protected char setFechaNacimiento(String fecha) {
 		//llama al método que comprueba si es correcta la fecha
 		//si es correcta, la guarda en el atributo fecha_nacimiento y devuelve la letra t
 		//si no es correcta devuelve 'f' y que vuelva a pedir la fecha
 		boolean correcta=false;
-		correcta=comprueba_fecha(fecha);
+		
+		correcta = comprueba_fecha(fecha); 
+		
 		if (correcta){
+			
 			fecha_nacimiento=fecha;
 			return 't';
-		}else return 'f';
+		}
+		
+		else 
+			return 'f';
 	}
-	protected String getFechaNacimiento(){
+	
+	protected String getFechaNacimiento() {
+		
 		return fecha_nacimiento;
 	}
-	protected void setEscalafon(int orden){
+	
+	protected void setEscalafon(int orden) {
+		
 		escalafon=orden;
 	}
-	protected int getEscalafon(){
+	
+	protected int getEscalafon() {
+		
 		return escalafon;
 	}
-	public void setCurso(String curse){
+	
+	public void setCurso(String curse) {
+		
 		curso=curse;
 	}
-	public String getCurso(){
+	
+	public String getCurso() {
+		
 		return curso;
 	}
 
 	//resto de métodos
-	protected int edad(){
+	protected int edad() {
+		
 		int edad=0;
 		//Calcular la edad por la fecha de nacimiento
 		Date fechaActual = new Date();
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+		
 		String hoy = formato.format(fechaActual);
 	    	String[] dat1 = getFechaNacimiento().split("/");
 	    	String[] dat2 = hoy.split("/");
+	    	
 		int anios = Integer.parseInt(dat2[2]) - Integer.parseInt(dat1[2]);
 	    	int mes = Integer.parseInt(dat2[1]) - Integer.parseInt(dat1[1]);
 	    
@@ -100,12 +134,15 @@ public abstract class Alumno implements Calificacion {
 	    
 		return edad;
 	}
-	protected boolean comprueba_fecha(String fecha){
+	protected boolean comprueba_fecha(String fecha) {
+		
 		boolean fecha_correcta=false;
 		//método que compruebe si fecha tiene el formato "dd/mm/aaaa"
 		String[]dato;
+	
 		try {
 			dato = fecha.split("/");
+			
 			int dia = Integer.parseInt(dato[0]);
 			int mes = Integer.parseInt(dato[1]);
 			int anio = Integer.parseInt(dato[2]);
@@ -115,6 +152,7 @@ public abstract class Alumno implements Calificacion {
 					if(anio>1000)
 						fecha_correcta = true;
 		}
+		
 		catch(ArrayIndexOutOfBoundsException ex) {
 			System.out.println(ex);
 		}
@@ -123,9 +161,9 @@ public abstract class Alumno implements Calificacion {
 			return true;
 		else 
 			return false;
-		
 	}
-	protected void rellena_asignaturas(){
+	protected void rellena_asignaturas() {
+		
 		//método que rellene automáticamente el array de asignaturas
 		//para no tener que ir rellenandolas a mano
 		Asignatura a1 = new Asignatura("Java",8);
@@ -133,6 +171,7 @@ public abstract class Alumno implements Calificacion {
 		//el nombre de las asignaturas con el método estatico Extras.rellena_cadena
 		//la nota de la asignatura con el método estatico Extras.genera_numero
 		for(int i=1; i<asignaturas.length-1; i++) {
+		
 			asignaturas[i] = new Asignatura(Extras.rellena_cadena((int)Extras.numero_aleatorio(2, 10)),(int) Extras.numero_aleatorio(0, 10));
 		}
 	}
