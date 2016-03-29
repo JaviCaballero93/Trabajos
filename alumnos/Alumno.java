@@ -22,7 +22,7 @@ public abstract class Alumno implements Calificacion {
 		dni=domicilio=fecha_nacimiento="";
 	}
 	
-	//métodos set/get
+	//mÃ©todos set/get
 	protected void setNombre(String nombre){
 		this.nombre=nombre;
 	}
@@ -48,7 +48,7 @@ public abstract class Alumno implements Calificacion {
 		return domicilio;
 	}
 	protected char setFechaNacimiento(String fecha){
-		//llama al método que comprueba si es correcta la fecha
+		//llama al mÃ©todo que comprueba si es correcta la fecha
 		//si es correcta, la guarda en el atributo fecha_nacimiento y devuelve la letra t
 		//si no es correcta devuelve 'f' y que vuelva a pedir la fecha
 		boolean correcta=false;
@@ -74,35 +74,35 @@ public abstract class Alumno implements Calificacion {
 		return curso;
 	}
 
-	//resto de métodos
+	//resto de mÃ©todos
 	protected int edad(){
 		int edad=0;
 		//Calcular la edad por la fecha de nacimiento
 		Date fechaActual = new Date();
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 		String hoy = formato.format(fechaActual);
-	    String[] dat1 = getFechaNacimiento().split("/");
-	    String[] dat2 = hoy.split("/");
-	    int anios = Integer.parseInt(dat2[2]) - Integer.parseInt(dat1[2]);
-	    int mes = Integer.parseInt(dat2[1]) - Integer.parseInt(dat1[1]);
+	    	String[] dat1 = getFechaNacimiento().split("/");
+	    	String[] dat2 = hoy.split("/");
+		int anios = Integer.parseInt(dat2[2]) - Integer.parseInt(dat1[2]);
+	    	int mes = Integer.parseInt(dat2[1]) - Integer.parseInt(dat1[1]);
 	    
-	    if (mes < 0) 
-	      anios -= 1;
+	    	if (mes < 0) 
+	      		anios -= 1;
 	     
-	    else if (mes == 0) {
-	      int dia = Integer.parseInt(dat2[0]) - Integer.parseInt(dat1[0]);
+	    	else if (mes == 0) {
+	      		int dia = Integer.parseInt(dat2[0]) - Integer.parseInt(dat1[0]);
 	      
-	      if (dia < 0) 
-	      	anios -= 1;
-	    }
+	      		if (dia < 0) 
+	      			anios -= 1;
+	    	}
 		
-	    edad = anios;
+	    	edad = anios;
 	    
 		return edad;
 	}
 	protected boolean comprueba_fecha(String fecha){
 		boolean fecha_correcta=false;
-		//método que compruebe si fecha tiene el formato "dd/mm/aaaa"
+		//mÃ©todo que compruebe si fecha tiene el formato "dd/mm/aaaa"
 		String[]dato;
 		try {
 			dato = fecha.split("/");
@@ -126,19 +126,19 @@ public abstract class Alumno implements Calificacion {
 		
 	}
 	protected void rellena_asignaturas(){
-		//método que rellene automáticamente el array de asignaturas
+		//mÃ©todo que rellene automÃ¡ticamente el array de asignaturas
 		//para no tener que ir rellenandolas a mano
 		Asignatura a1 = new Asignatura("Java",8);
 		asignaturas[0]=a1;
-		//el nombre de las asignaturas con el método estatico Extras.rellena_cadena
-		//la nota de la asignatura con el método estatico Extras.genera_numero
+		//el nombre de las asignaturas con el mÃ©todo estatico Extras.rellena_cadena
+		//la nota de la asignatura con el mÃ©todo estatico Extras.genera_numero
 		for(int i=1; i<asignaturas.length-1; i++) {
 			asignaturas[i] = new Asignatura(Extras.rellena_cadena((int)Extras.numero_aleatorio(2, 10)),(int) Extras.numero_aleatorio(0, 10));
 		}
 	}
 	
-	//métodos abstractos
+	//mÃ©todos abstractos
 	protected abstract void setDomicilio(String domicilio);
-	//método abstracto para guardar el domicilio según el alumno derivado
+	//mÃ©todo abstracto para guardar el domicilio segÃºn el alumno derivado
 	protected abstract String visualizar_alumno();
 }
