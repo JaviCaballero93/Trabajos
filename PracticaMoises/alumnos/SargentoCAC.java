@@ -6,32 +6,42 @@ public class SargentoCAC extends AlumnoFormacion {
 	private String provincia;
 	
 	//Constructor
-	public SargentoCAC (String nombre, String apellidos, int orden, String Provincia){
-		super(nombre,apellidos,"24ª PROMOCION CG-EB-CAC/CIS");
+	public SargentoCAC (String nombre, String apellidos, int orden, String Provincia) {
+		
+		super(nombre,apellidos,"24Âª PROMOCION CG-EB-CAC/CIS");
 		asignaturas = new Asignatura[9];
 		rellena_asignaturas();
 		setEscalafon(orden);
 		provincia=Provincia;
 	}
+	
 	//metodos set/get provincia
-	public void setProvincia(String provincia){
+	public void setProvincia(String provincia) {
+		
 		this.provincia=provincia;
 	}
-	public String getProvincia(){
+	
+	public String getProvincia() {
+		
 		return provincia;
 	}
 	
 	@Override
-	//método sobreescrito
-	public String visualizar_alumno(){
+	//mÃ©todo sobreescrito
+	public String visualizar_alumno() {
+		
 		String padre = super.visualizar_alumno();
+		
 		return padre + "|CAC|" + this.toString();
 	}
-	//implementacion métodos abstractos interfaces
-	public double calificacion_parcial(){
+	
+	//implementacion mÃ©todos abstractos interfaces
+	public double calificacion_parcial() {
+		
 		double cp=0.0;
-		//método que hace la media de las notas de todas las asignaturas
+		//mÃ©todo que hace la media de las notas de todas las asignaturas
 		for(int i=0; i<asignaturas.length-1; i++) {
+			
 			String[] nota = asignaturas[i].mostrar_asignatura().split(":");
 			
 			cp += Double.parseDouble(nota[1]);
@@ -41,20 +51,23 @@ public class SargentoCAC extends AlumnoFormacion {
 		
 		return cp;
 	}
-	public double ipa(){
+	
+	public double ipa() {
+		
 		double informe_alumno=10;
 		//metodo que vaya restando 1 por cada sancion del alumno; 
-		//usando el método getCantidad de cada alumno
-		
+		//usando el mÃ©todo getCantidad de cada alumno
 		informe_alumno -= this.getCantidad();
 		
 		return informe_alumno;
 	}
-	public double calificacion_final(){
+	
+	public double calificacion_final() {
+		
 		double nfinal=0.0;
 		//Calcular el 70% de la calificacion_parcial
 		//Calcular el 30% del ipa
-		//método que devuelva la suma estos dos porcentajes
+		//mÃ©todo que devuelva la suma estos dos porcentajes
 		nfinal = 0.7 * calificacion_parcial() + 0.3 * ipa();
 		
 		return nfinal;
