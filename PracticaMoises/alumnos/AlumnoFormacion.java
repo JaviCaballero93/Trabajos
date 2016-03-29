@@ -8,7 +8,7 @@ public abstract class AlumnoFormacion extends Alumno implements Ipa {
 		super(nombre,apellidos);
 		san = new Sancion[10];
 		this.curso=curso;
-		//para dar valores a dni y fecha_nacimiento, usar mÈtodos de la clase padre
+		//para dar valores a dni y fecha_nacimiento, usar m√©todos de la clase padre
 		this.dni = getDni();
 		this.fecha_nacimiento = getFechaNacimiento();
 		setDomicilio("Emacot");
@@ -17,25 +17,25 @@ public abstract class AlumnoFormacion extends Alumno implements Ipa {
 	public int getCantidad(){
 		return cantidad;
 	}
-	//resto mÈtodos
+	//resto m√©todos
 	public void setDomicilio(String Domicilio){
 		domicilio=Domicilio;
 	}
 	public void anyadir_sancion(String tipo, int dias){
-		//aÒadir un objeto sancion al array de sanciones
-		//usar el atributo cantidad para controlar el m·ximo de 10 sanciones
+		//a√±adir un objeto sancion al array de sanciones
+		//usar el atributo cantidad para controlar el m√°ximo de 10 sanciones
 		for(int i=0; i<san.length-1; i++) {
 			if(i==getCantidad() && getCantidad() < 10) {
 				san[i] = new Sancion(tipo, dias);
 			}
 			else if(getCantidad()== 10)
-				System.out.println("Se han incluido el m·ximo de 10 sanciones.");
+				System.out.println("Se han incluido el m√°ximo de 10 sanciones.");
 		}
 		
 		cantidad++;
 	}
 	public void mostrar_sanciones_alumno(){
-		//hay que usar el mÈtodo mostrar_sancion en todos
+		//hay que usar el m√©todo mostrar_sancion en todos
 		//los objetos sancion del array
 		int i;
 		
