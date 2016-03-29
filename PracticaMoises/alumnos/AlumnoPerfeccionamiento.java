@@ -9,7 +9,7 @@ public abstract class AlumnoPerfeccionamiento extends Alumno {
 		super(nombre,apellidos);
 		aus = new Ausencias[10];
 		this.curso=curso;
-		//para dar valores a dni y fecha_nacimiento, usar mÈtodos de la clase padre
+		//para dar valores a dni y fecha_nacimiento, usar m√©todos de la clase padre
 		this.dni = getDni();
 		this.fecha_nacimiento = getFechaNacimiento();
 	}
@@ -24,10 +24,10 @@ public abstract class AlumnoPerfeccionamiento extends Alumno {
 		domicilio=home;
 	}
 	public void anyadir_ausencia(String fecha, int horas){
-		//aÒadir un objeto ausencia al array de ausencias
+		//a√±adir un objeto ausencia al array de ausencias
 		//Ausencias a = new Ausencias(fecha,horas)
 		//aus[cantidad]=a;
-		//usar el atributo cantidad para controlar el m·ximo de 10 sanciones
+		//usar el atributo cantidad para controlar el m√°ximo de 10 sanciones
 		//iremos sumando en acumuladas la cantidad total de horas
 		//acumuladas=acumuladas+a.getHoras();
 		for(int i=0; i<aus.length; i++) {
@@ -37,13 +37,13 @@ public abstract class AlumnoPerfeccionamiento extends Alumno {
 			}
 			
 			else if(getCantidad() == 10)
-				System.out.println("Ha llegado al lÌmite de 10 ausencias.");
+				System.out.println("Ha llegado al l√≠mite de 10 ausencias.");
 		}
 		
 		cantidad++;
 	}
 	public void mostrar_ausencias_alumno(){
-		//hay que usar el mÈtodo mostrar_ausencia en todos
+		//hay que usar el m√©todo mostrar_ausencia en todos
 		//los objetos ausencia del array
 		int i;
 		 try {
