@@ -4,8 +4,8 @@ public abstract class AlumnoPerfeccionamiento extends Alumno {
 	
 	//atributos
 	protected Ausencias aus[];
-	protected int cantidad=0;
-	protected int acumuladas=0;
+	protected int cantidad = 0;
+	protected int acumuladas = 0;
 	
 	//constructor
 	public AlumnoPerfeccionamiento(String nombre, String apellidos, String curso) {
