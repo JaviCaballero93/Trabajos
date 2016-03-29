@@ -18,15 +18,15 @@ public abstract class Alumno implements Calificacion {
 	//constructores
 	public Alumno(String nombre, String apellidos) {
 		
-		this.nombre=nombre;
-		this.apellidos=apellidos;
-		dni=domicilio=fecha_nacimiento="";
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		dni = domicilio = fecha_nacimiento = "";
 	}
 	
 	//métodos set/get
 	protected void setNombre(String nombre) {
 		
-		this.nombre=nombre;
+		this.nombre = nombre;
 	}
 	
 	protected String getNombre() {
@@ -36,7 +36,7 @@ public abstract class Alumno implements Calificacion {
 	
 	protected void setApellidos(String apellidos) {
 		
-		this.apellidos=apellidos;
+		this.apellidos = apellidos;
 	}
 	
 	protected String getApellidos() {
@@ -53,7 +53,9 @@ public abstract class Alumno implements Calificacion {
 	protected void setDni(int numero) {
 	
 		String nif;
-		nif=Extras.nif(numero);
+		
+		nif = Extras.nif(numero);
+		
 		this.dni =nif;
 	}
 	
@@ -66,13 +68,13 @@ public abstract class Alumno implements Calificacion {
 		//llama al método que comprueba si es correcta la fecha
 		//si es correcta, la guarda en el atributo fecha_nacimiento y devuelve la letra t
 		//si no es correcta devuelve 'f' y que vuelva a pedir la fecha
-		boolean correcta=false;
+		boolean correcta = false;
 		
 		correcta = comprueba_fecha(fecha); 
 		
-		if (correcta){
+		if (correcta) {
 			
-			fecha_nacimiento=fecha;
+			fecha_nacimiento = fecha;
 			return 't';
 		}
 		
@@ -87,7 +89,7 @@ public abstract class Alumno implements Calificacion {
 	
 	protected void setEscalafon(int orden) {
 		
-		escalafon=orden;
+		escalafon = orden;
 	}
 	
 	protected int getEscalafon() {
@@ -97,7 +99,7 @@ public abstract class Alumno implements Calificacion {
 	
 	public void setCurso(String curse) {
 		
-		curso=curse;
+		curso = curse;
 	}
 	
 	public String getCurso() {
@@ -108,7 +110,7 @@ public abstract class Alumno implements Calificacion {
 	//resto de métodos
 	protected int edad() {
 		
-		int edad=0;
+		int edad = 0;
 		//Calcular la edad por la fecha de nacimiento
 		Date fechaActual = new Date();
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
@@ -136,7 +138,7 @@ public abstract class Alumno implements Calificacion {
 	}
 	protected boolean comprueba_fecha(String fecha) {
 		
-		boolean fecha_correcta=false;
+		boolean fecha_correcta = false;
 		//método que compruebe si fecha tiene el formato "dd/mm/aaaa"
 		String[]dato;
 	
@@ -167,7 +169,7 @@ public abstract class Alumno implements Calificacion {
 		//método que rellene automáticamente el array de asignaturas
 		//para no tener que ir rellenandolas a mano
 		Asignatura a1 = new Asignatura("Java",8);
-		asignaturas[0]=a1;
+		asignaturas[0] = a1;
 		//el nombre de las asignaturas con el método estatico Extras.rellena_cadena
 		//la nota de la asignatura con el método estatico Extras.genera_numero
 		for(int i=1; i<asignaturas.length-1; i++) {
