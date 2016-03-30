@@ -31,7 +31,7 @@ public abstract class AlumnoPerfeccionamiento extends Alumno {
 	
 	public void setDomicilio(String home) {
 		
-		domicilio=home;
+		domicilio = home;
 	}
 	
 	public void anyadir_ausencia(String fecha, int horas) {
@@ -44,7 +44,7 @@ public abstract class AlumnoPerfeccionamiento extends Alumno {
 		//acumuladas=acumuladas+a.getHoras();
 		for(int i=0; i<aus.length; i++) {
 			
-			if(i==getCantidad() && getCantidad() < 10) {
+			if(i == getCantidad() && getCantidad() < 10) {
 				aus[i] = new Ausencias(fecha, horas);
 				acumuladas += aus[i].getHoras();	
 			}
@@ -68,8 +68,9 @@ public abstract class AlumnoPerfeccionamiento extends Alumno {
 		 }
 		 
 		 catch(NullPointerException ex) {
+			 
 			 System.out.println(ex);
-			 i=10;
+			 i = 10;
 		 }
 	}
 	
