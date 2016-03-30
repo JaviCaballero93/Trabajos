@@ -11,8 +11,8 @@ public class Extras {
 		
 		//Tendrá que usar obligatoriamiente la cadena letras en la obtención de la letra del nif
 		//usando algún método de manejo de cadenas como toCharArray(), charAt()
-		String letras= "TRWAGMYFPDXBNJZSQVHLCKE";
-		String nif="";
+		String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+		String nif = "";
 		
 		//metodo que calcula la letra del dni pasado y devolvemos el nif
 		nif += String.valueOf(dni) + letras.charAt(dni % 23);
@@ -47,7 +47,7 @@ public class Extras {
 	
 	public static int menu() {
 		
-		int opcion=0;
+		int opcion = 0;
 		
 		System.out.println("\n1.- Alta Alumno Formacion");
 		System.out.println("2.- Alta Alumno Perfeccionamiento");
@@ -61,7 +61,7 @@ public class Extras {
 		System.out.println("0.- Salir");
 		System.out.print(">>> ");
 		
-		opcion=tc.nextInt();
+		opcion = tc.nextInt();
 		
 		return opcion;
 	}
