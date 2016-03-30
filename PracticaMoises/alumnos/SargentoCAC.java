@@ -12,13 +12,13 @@ public class SargentoCAC extends AlumnoFormacion {
 		asignaturas = new Asignatura[9];
 		rellena_asignaturas();
 		setEscalafon(orden);
-		provincia=Provincia;
+		provincia = Provincia;
 	}
 	
 	//metodos set/get provincia
 	public void setProvincia(String provincia) {
 		
-		this.provincia=provincia;
+		this.provincia = provincia;
 	}
 	
 	public String getProvincia() {
@@ -38,7 +38,7 @@ public class SargentoCAC extends AlumnoFormacion {
 	//implementacion métodos abstractos interfaces
 	public double calificacion_parcial() {
 		
-		double cp=0.0;
+		double cp = 0.0;
 		//método que hace la media de las notas de todas las asignaturas
 		for(int i=0; i<asignaturas.length-1; i++) {
 			
@@ -54,7 +54,7 @@ public class SargentoCAC extends AlumnoFormacion {
 	
 	public double ipa() {
 		
-		double informe_alumno=10;
+		double informe_alumno = 10;
 		//metodo que vaya restando 1 por cada sancion del alumno; 
 		//usando el método getCantidad de cada alumno
 		informe_alumno -= this.getCantidad();
@@ -64,7 +64,7 @@ public class SargentoCAC extends AlumnoFormacion {
 	
 	public double calificacion_final() {
 		
-		double nfinal=0.0;
+		double nfinal = 0.0;
 		//Calcular el 70% de la calificacion_parcial
 		//Calcular el 30% del ipa
 		//método que devuelva la suma estos dos porcentajes
