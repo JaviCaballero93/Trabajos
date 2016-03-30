@@ -12,7 +12,7 @@ public class SargentoTEL extends AlumnoPerfeccionamiento {
 		asignaturas = new Asignatura[7];
 		rellena_asignaturas();
 		setEscalafon(orden);
-		this.destino=destino;
+		this.destino = destino;
 	}
 	
 	//metodos set/get destino
@@ -63,7 +63,7 @@ public class SargentoTEL extends AlumnoPerfeccionamiento {
 	
 	public double calificacion_final() {
 		
-		double nfinal=0.0;
+		double nfinal = 0.0;
 		//A la calificacion_parcial le restamos el coeficiente
 		//método que devuelva la suma estos dos porcentajes
 		nfinal = calificacion_parcial() - coeficiente();	
