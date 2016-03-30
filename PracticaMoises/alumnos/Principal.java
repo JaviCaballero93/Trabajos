@@ -391,7 +391,7 @@ public class Principal {
 							System.out.println("Destino: " + ((SargentoTEL) lista).getDestino());
 							
 						System.out.println("Calificacion Final: " + lista.calificacion_final());
-						System.out.println("MNB : "+lista.visualizar_alumno());
+						System.out.println("MNB : " + lista.visualizar_alumno());
 						System.out.println("------------------------------------------------");
 					}
 					
