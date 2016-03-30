@@ -7,8 +7,8 @@ public class Sancion {
 	
 	public Sancion(String tipo, int dias) {
 		
-		tipo_sancion=tipo;
-		dias_sancion=dias;
+		tipo_sancion = tipo;
+		dias_sancion = dias;
 	}
 	
 	public String mostrar_sancion() {
