@@ -56,7 +56,7 @@ public abstract class Alumno implements Calificacion {
 		
 		nif = Extras.nif(numero);
 		
-		this.dni =nif;
+		this.dni = nif;
 	}
 	
 	protected String getDomicilio() {
