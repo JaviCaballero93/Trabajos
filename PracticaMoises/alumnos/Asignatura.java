@@ -7,12 +7,12 @@ public class Asignatura {
 	
 	public Asignatura (String asignatura, int nota) {
 		
-		this.asignatura=asignatura;
-		this.nota=nota;
+		this.asignatura = asignatura;
+		this.nota = nota;
 	}
 	
 	public String mostrar_asignatura() {
 	
-		return asignatura+":" + nota;
+		return asignatura + ":" + nota;
 	}
 }
