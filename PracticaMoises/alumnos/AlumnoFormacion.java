@@ -4,14 +4,14 @@ public abstract class AlumnoFormacion extends Alumno implements Ipa {
 	
 	//atributos
 	protected Sancion san[];
-	protected int cantidad=0;
+	protected int cantidad = 0;
 	
 	//constructor
 	public AlumnoFormacion(String nombre, String apellidos, String curso) {
 		
 		super(nombre,apellidos);
 		san = new Sancion[10];
-		this.curso=curso;
+		this.curso = curso;
 		//para dar valores a dni y fecha_nacimiento, usar métodos de la clase padre
 		this.dni = getDni();
 		this.fecha_nacimiento = getFechaNacimiento();
@@ -27,7 +27,7 @@ public abstract class AlumnoFormacion extends Alumno implements Ipa {
 	//resto métodos
 	public void setDomicilio(String Domicilio) {
 		
-		domicilio=Domicilio;
+		domicilio = Domicilio;
 	}
 	
 	public void anyadir_sancion(String tipo, int dias) {
@@ -39,7 +39,7 @@ public abstract class AlumnoFormacion extends Alumno implements Ipa {
 			if(i==getCantidad() && getCantidad() < 10) 
 				san[i] = new Sancion(tipo, dias);
 			
-			else if(getCantidad()== 10)
+			else if(getCantidad() == 10)
 				System.out.println("Se han incluido el máximo de 10 sanciones.");
 		}
 		
@@ -62,7 +62,7 @@ public abstract class AlumnoFormacion extends Alumno implements Ipa {
 		catch (NullPointerException ex) {
 			
 			System.out.println(ex);
-			i=10;
+			i = 10;
 		}
 	}
 	
